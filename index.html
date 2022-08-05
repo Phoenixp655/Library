@@ -4,11 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Library</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <p>Hoang Anh</p>
-    <p>test</p>
+    <header>
+        <div class="container">
+            <h1 class="text-center my-4">Library</h1>
+        </div>
+    </header>
+    <main class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Readed ?</th>
+                    <th scope="col">Realease date</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+                <!-- book list here -->
+            </tbody>
+        </table>
+    </main>
+    <footer class="container fixed-bottom mb-3">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2 d-flex justify-content-center">
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#add-book-modal">
+                    Add book
+                </button>
+            </div>
+            <div class="col-5"></div>
+        </div>
+    </footer>
+    <div id="add-book-modal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add Book</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="get" id="add-book" class="m-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Book title" required>
+                        <label for="title" class="">Book title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="author" name="author" class="form-control" placeholder="Author name" required> 
+                        <label for="author" class="">Author name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" id="pages" name="pages" class="form-control" placeholder="Number of pages" required>
+                        <label for="pages" class="">Number of pages</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="readed" name="readed" onclick="handleCheckboxClick(this)">
+                        <label class="form-check-label" for="readed">Read yet ?</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" id="date" name="date" class="form-control" placeholder="Read yet ?" required>
+                        <label for="date" class="">Realease date</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
